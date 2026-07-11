@@ -1,0 +1,548 @@
+{
+  "per_posting_classifications": [
+    {
+      "posting_id": "shopify-lead-1",
+      "overall_fit": 51.13,
+      "strong": [
+        {
+          "text": "Strong Docker and container orchestration skills",
+          "bucket": "required",
+          "similarity": 0.6826081871986389,
+          "best_matched_section": "skills",
+          "strength": "strong"
+        },
+        {
+          "text": "Familiarity with Kubernetes in production environments",
+          "bucket": "preferred",
+          "similarity": 0.7985893487930298,
+          "best_matched_section": "skills",
+          "strength": "strong"
+        },
+        {
+          "text": "Rust experience for performance-critical services",
+          "bucket": "preferred",
+          "similarity": 0.6020880341529846,
+          "best_matched_section": "skills",
+          "strength": "strong"
+        },
+        {
+          "text": "Experience mentoring junior engineers",
+          "bucket": "preferred",
+          "similarity": 0.7728230953216553,
+          "best_matched_section": "experience",
+          "strength": "strong"
+        }
+      ],
+      "partial": [
+        {
+          "text": "+ years of backend development experience",
+          "bucket": "required",
+          "similarity": 0.4388286769390106,
+          "best_matched_section": "experience",
+          "strength": "partial"
+        },
+        {
+          "text": "Experience with Python or Node.js in production",
+          "bucket": "required",
+          "similarity": 0.374091237783432,
+          "best_matched_section": "skills",
+          "strength": "partial"
+        }
+      ],
+      "missing": [
+        {
+          "text": "Deep expertise with Shopify, Shopify Plus, and Shopify integrations",
+          "bucket": "required",
+          "similarity": 0.24679602682590485,
+          "best_matched_section": "experience",
+          "strength": "missing"
+        },
+        {
+          "text": "Strong problem-solving and communication skills",
+          "bucket": "required",
+          "similarity": 0.28113120794296265,
+          "best_matched_section": "experience",
+          "strength": "missing"
+        }
+      ]
+    },
+    {
+      "posting_id": "payments-platform",
+      "overall_fit": 54.08,
+      "strong": [
+        {
+          "text": "Experience with Docker and containerization",
+          "bucket": "required",
+          "similarity": 0.7744265794754028,
+          "best_matched_section": "skills",
+          "strength": "strong"
+        },
+        {
+          "text": "Proficiency in Go or Rust",
+          "bucket": "required",
+          "similarity": 0.6022199392318726,
+          "best_matched_section": "skills",
+          "strength": "strong"
+        },
+        {
+          "text": "Kubernetes production operations experience",
+          "bucket": "preferred",
+          "similarity": 0.7562400698661804,
+          "best_matched_section": "skills",
+          "strength": "strong"
+        },
+        {
+          "text": "Experience with high-throughput event processing (Kafka, similar)",
+          "bucket": "preferred",
+          "similarity": 0.6527247428894043,
+          "best_matched_section": "experience",
+          "strength": "strong"
+        }
+      ],
+      "partial": [
+        {
+          "text": "+ years backend engineering in production systems",
+          "bucket": "required",
+          "similarity": 0.38505077362060547,
+          "best_matched_section": "experience",
+          "strength": "partial"
+        },
+        {
+          "text": "Strong understanding of distributed systems",
+          "bucket": "required",
+          "similarity": 0.5802047252655029,
+          "best_matched_section": "education",
+          "strength": "partial"
+        }
+      ],
+      "missing": [
+        {
+          "text": "Excellent written and verbal communication skills",
+          "bucket": "required",
+          "similarity": 0.267661988735199,
+          "best_matched_section": "experience",
+          "strength": "missing"
+        },
+        {
+          "text": "Contributions to open source infrastructure projects",
+          "bucket": "preferred",
+          "similarity": 0.327196329832077,
+          "best_matched_section": "experience",
+          "strength": "missing"
+        }
+      ]
+    },
+    {
+      "posting_id": "ecommerce-backend",
+      "overall_fit": 42.45,
+      "strong": [
+        {
+          "text": "Docker-based development workflows",
+          "bucket": "required",
+          "similarity": 0.6230701208114624,
+          "best_matched_section": "skills",
+          "strength": "strong"
+        },
+        {
+          "text": "Kubernetes production experience",
+          "bucket": "preferred",
+          "similarity": 0.8171941041946411,
+          "best_matched_section": "skills",
+          "strength": "strong"
+        }
+      ],
+      "partial": [
+        {
+          "text": "Rust or systems programming background is essential",
+          "bucket": "required",
+          "similarity": 0.5647813081741333,
+          "best_matched_section": "skills",
+          "strength": "partial"
+        }
+      ],
+      "missing": [
+        {
+          "text": "Solid backend development experience with Python, Ruby, or Node.js",
+          "bucket": "required",
+          "similarity": 0.34948182106018066,
+          "best_matched_section": "skills",
+          "strength": "missing"
+        },
+        {
+          "text": "Working knowledge of Shopify or comparable e-commerce platforms",
+          "bucket": "required",
+          "similarity": 0.29976457357406616,
+          "best_matched_section": "experience",
+          "strength": "missing"
+        },
+        {
+          "text": "Strong communication and cross-functional collaboration",
+          "bucket": "required",
+          "similarity": 0.2943456172943115,
+          "best_matched_section": "experience",
+          "strength": "missing"
+        },
+        {
+          "text": "Japanese language proficiency (we work with Japanese merchants)",
+          "bucket": "preferred",
+          "similarity": 0.2313375174999237,
+          "best_matched_section": "experience",
+          "strength": "missing"
+        },
+        {
+          "text": "Experience with internationalization and localization",
+          "bucket": "preferred",
+          "similarity": 0.21404725313186646,
+          "best_matched_section": "experience",
+          "strength": "missing"
+        }
+      ]
+    },
+    {
+      "posting_id": "infra-devops",
+      "overall_fit": 57.52,
+      "strong": [
+        {
+          "text": "Extensive Docker and Kubernetes production experience",
+          "bucket": "required",
+          "similarity": 0.6953120231628418,
+          "best_matched_section": "skills",
+          "strength": "strong"
+        },
+        {
+          "text": "Strong Rust or Go for tooling and services",
+          "bucket": "required",
+          "similarity": 0.6329587697982788,
+          "best_matched_section": "skills",
+          "strength": "strong"
+        },
+        {
+          "text": "Terraform infrastructure-as-code experience",
+          "bucket": "preferred",
+          "similarity": 0.7138607501983643,
+          "best_matched_section": "skills",
+          "strength": "strong"
+        }
+      ],
+      "partial": [
+        {
+          "text": "+ years operating containerized production infrastructure",
+          "bucket": "required",
+          "similarity": 0.549354612827301,
+          "best_matched_section": "skills",
+          "strength": "partial"
+        },
+        {
+          "text": "Deep understanding of observability (Prometheus, Grafana, Datadog)",
+          "bucket": "required",
+          "similarity": 0.48843279480934143,
+          "best_matched_section": "skills",
+          "strength": "partial"
+        },
+        {
+          "text": "Excellent communication with product and engineering teams",
+          "bucket": "required",
+          "similarity": 0.41382938623428345,
+          "best_matched_section": "experience",
+          "strength": "partial"
+        },
+        {
+          "text": "On-call rotation experience for production systems",
+          "bucket": "preferred",
+          "similarity": 0.5132683515548706,
+          "best_matched_section": "experience",
+          "strength": "partial"
+        }
+      ],
+      "missing": []
+    },
+    {
+      "posting_id": "shopify-full-stack",
+      "overall_fit": 47.45,
+      "strong": [
+        {
+          "text": "Docker for local development and deployment",
+          "bucket": "required",
+          "similarity": 0.6743654012680054,
+          "best_matched_section": "skills",
+          "strength": "strong"
+        },
+        {
+          "text": "Kubernetes production familiarity",
+          "bucket": "preferred",
+          "similarity": 0.7669185400009155,
+          "best_matched_section": "skills",
+          "strength": "strong"
+        }
+      ],
+      "partial": [
+        {
+          "text": "+ years full-stack development",
+          "bucket": "required",
+          "similarity": 0.356410950422287,
+          "best_matched_section": "experience",
+          "strength": "partial"
+        },
+        {
+          "text": "Backend proficiency in Node.js, Ruby, or Python",
+          "bucket": "required",
+          "similarity": 0.36672094464302063,
+          "best_matched_section": "skills",
+          "strength": "partial"
+        },
+        {
+          "text": "Rust for performance-sensitive backend services",
+          "bucket": "preferred",
+          "similarity": 0.4945909380912781,
+          "best_matched_section": "skills",
+          "strength": "partial"
+        }
+      ],
+      "missing": [
+        {
+          "text": "Strong Shopify platform knowledge (theme development, storefront APIs, admin API)",
+          "bucket": "required",
+          "similarity": 0.33609357476234436,
+          "best_matched_section": "experience",
+          "strength": "missing"
+        },
+        {
+          "text": "Clear communication and teamwork skills",
+          "bucket": "required",
+          "similarity": 0.24813401699066162,
+          "best_matched_section": "experience",
+          "strength": "missing"
+        }
+      ]
+    }
+  ],
+  "ranked_gaps": [
+    {
+      "canonical_text": "Working knowledge of Shopify or comparable e-commerce platforms",
+      "example_requirements": [
+        "Strong Shopify platform knowledge (theme development, storefront APIs, admin API)",
+        "Deep expertise with Shopify, Shopify Plus, and Shopify integrations",
+        "Working knowledge of Shopify or comparable e-commerce platforms"
+      ],
+      "avg_similarity": 0.2942180583874385,
+      "affected_posting_ids": [
+        "ecommerce-backend",
+        "shopify-lead-1",
+        "shopify-full-stack"
+      ],
+      "frequency": 0.6,
+      "gap_score": 0.4234691649675369
+    },
+    {
+      "canonical_text": "Backend proficiency in Node.js, Ruby, or Python",
+      "example_requirements": [
+        "Backend proficiency in Node.js, Ruby, or Python",
+        "Experience with Python or Node.js in production",
+        "Solid backend development experience with Python, Ruby, or Node.js"
+      ],
+      "avg_similarity": 0.36343133449554443,
+      "affected_posting_ids": [
+        "ecommerce-backend",
+        "shopify-lead-1",
+        "shopify-full-stack"
+      ],
+      "frequency": 0.6,
+      "gap_score": 0.38194119930267334
+    },
+    {
+      "canonical_text": "+ years of backend development experience",
+      "example_requirements": [
+        "+ years backend engineering in production systems",
+        "+ years of backend development experience"
+      ],
+      "avg_similarity": 0.41193972527980804,
+      "affected_posting_ids": [
+        "shopify-lead-1",
+        "payments-platform"
+      ],
+      "frequency": 0.4,
+      "gap_score": 0.2352241098880768
+    },
+    {
+      "canonical_text": "Experience with internationalization and localization",
+      "example_requirements": [
+        "Experience with internationalization and localization"
+      ],
+      "avg_similarity": 0.21404725313186646,
+      "affected_posting_ids": [
+        "ecommerce-backend"
+      ],
+      "frequency": 0.2,
+      "gap_score": 0.15719054937362673
+    },
+    {
+      "canonical_text": "Japanese language proficiency (we work with Japanese merchants)",
+      "example_requirements": [
+        "Japanese language proficiency (we work with Japanese merchants)"
+      ],
+      "avg_similarity": 0.2313375174999237,
+      "affected_posting_ids": [
+        "ecommerce-backend"
+      ],
+      "frequency": 0.2,
+      "gap_score": 0.15373249650001528
+    },
+    {
+      "canonical_text": "Clear communication and teamwork skills",
+      "example_requirements": [
+        "Clear communication and teamwork skills"
+      ],
+      "avg_similarity": 0.24813401699066162,
+      "affected_posting_ids": [
+        "shopify-full-stack"
+      ],
+      "frequency": 0.2,
+      "gap_score": 0.15037319660186768
+    },
+    {
+      "canonical_text": "Excellent written and verbal communication skills",
+      "example_requirements": [
+        "Excellent written and verbal communication skills"
+      ],
+      "avg_similarity": 0.267661988735199,
+      "affected_posting_ids": [
+        "payments-platform"
+      ],
+      "frequency": 0.2,
+      "gap_score": 0.1464676022529602
+    },
+    {
+      "canonical_text": "Strong problem-solving and communication skills",
+      "example_requirements": [
+        "Strong problem-solving and communication skills"
+      ],
+      "avg_similarity": 0.28113120794296265,
+      "affected_posting_ids": [
+        "shopify-lead-1"
+      ],
+      "frequency": 0.2,
+      "gap_score": 0.14377375841140747
+    },
+    {
+      "canonical_text": "Strong communication and cross-functional collaboration",
+      "example_requirements": [
+        "Strong communication and cross-functional collaboration"
+      ],
+      "avg_similarity": 0.2943456172943115,
+      "affected_posting_ids": [
+        "ecommerce-backend"
+      ],
+      "frequency": 0.2,
+      "gap_score": 0.1411308765411377
+    },
+    {
+      "canonical_text": "Contributions to open source infrastructure projects",
+      "example_requirements": [
+        "Contributions to open source infrastructure projects"
+      ],
+      "avg_similarity": 0.327196329832077,
+      "affected_posting_ids": [
+        "payments-platform"
+      ],
+      "frequency": 0.2,
+      "gap_score": 0.1345607340335846
+    },
+    {
+      "canonical_text": "+ years full-stack development",
+      "example_requirements": [
+        "+ years full-stack development"
+      ],
+      "avg_similarity": 0.356410950422287,
+      "affected_posting_ids": [
+        "shopify-full-stack"
+      ],
+      "frequency": 0.2,
+      "gap_score": 0.1287178099155426
+    },
+    {
+      "canonical_text": "Excellent communication with product and engineering teams",
+      "example_requirements": [
+        "Excellent communication with product and engineering teams"
+      ],
+      "avg_similarity": 0.41382938623428345,
+      "affected_posting_ids": [
+        "infra-devops"
+      ],
+      "frequency": 0.2,
+      "gap_score": 0.11723412275314332
+    },
+    {
+      "canonical_text": "Deep understanding of observability (Prometheus, Grafana, Datadog)",
+      "example_requirements": [
+        "Deep understanding of observability (Prometheus, Grafana, Datadog)"
+      ],
+      "avg_similarity": 0.48843279480934143,
+      "affected_posting_ids": [
+        "infra-devops"
+      ],
+      "frequency": 0.2,
+      "gap_score": 0.10231344103813172
+    },
+    {
+      "canonical_text": "Rust for performance-sensitive backend services",
+      "example_requirements": [
+        "Rust for performance-sensitive backend services"
+      ],
+      "avg_similarity": 0.4945909380912781,
+      "affected_posting_ids": [
+        "shopify-full-stack"
+      ],
+      "frequency": 0.2,
+      "gap_score": 0.1010818123817444
+    },
+    {
+      "canonical_text": "On-call rotation experience for production systems",
+      "example_requirements": [
+        "On-call rotation experience for production systems"
+      ],
+      "avg_similarity": 0.5132683515548706,
+      "affected_posting_ids": [
+        "infra-devops"
+      ],
+      "frequency": 0.2,
+      "gap_score": 0.09734632968902589
+    },
+    {
+      "canonical_text": "+ years operating containerized production infrastructure",
+      "example_requirements": [
+        "+ years operating containerized production infrastructure"
+      ],
+      "avg_similarity": 0.549354612827301,
+      "affected_posting_ids": [
+        "infra-devops"
+      ],
+      "frequency": 0.2,
+      "gap_score": 0.0901290774345398
+    },
+    {
+      "canonical_text": "Rust or systems programming background is essential",
+      "example_requirements": [
+        "Rust or systems programming background is essential"
+      ],
+      "avg_similarity": 0.5647813081741333,
+      "affected_posting_ids": [
+        "ecommerce-backend"
+      ],
+      "frequency": 0.2,
+      "gap_score": 0.08704373836517335
+    },
+    {
+      "canonical_text": "Strong understanding of distributed systems",
+      "example_requirements": [
+        "Strong understanding of distributed systems"
+      ],
+      "avg_similarity": 0.5802047252655029,
+      "affected_posting_ids": [
+        "payments-platform"
+      ],
+      "frequency": 0.2,
+      "gap_score": 0.08395905494689943
+    }
+  ],
+  "total_postings": 5
+}

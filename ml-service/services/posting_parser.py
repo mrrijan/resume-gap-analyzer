@@ -120,7 +120,7 @@ def _classify_header(line: str) -> str | None:
 
 def _clean_bullet(line: str) -> str:
     """Strip leading bullet markers, asterisks, hyphens, numbering."""
-    return re.sub(r'^[\s\-\*•●·◦▪►\d]+[\.\)]?\s*', '', line).strip()
+    return re.sub(r'^[\s\-\*•●·◦▪►]*(?:\d+[\.\)])?\s*', '', line).strip()
 
 
 # ---------- Layer 2: inline signal extraction ----------

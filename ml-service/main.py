@@ -5,7 +5,8 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from schemas.resume import ParsedResume
 from schemas.posting import PostingInput, ParsedPosting
 from schemas.match import MatchInput, MatchResult
-from services import resume_parser, posting_parser, matcher
+from schemas.gap import GapAnalysisInput, GapAnalysisResult
+from services import resume_parser, posting_parser, matcher, gap_analyzer
 
 app = FastAPI(title="ML Service")
 
@@ -34,5 +35,12 @@ async def parse_posting(payload: PostingInput):
 async def match(payload: MatchInput):
     try:
         return matcher.match(payload)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+@app.post("/gap-analysis", response_model=GapAnalysisResult)
+async def gap_analysis(payload: GapAnalysisInput):
+    try:
+        return gap_analyzer.analyze(payload)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
