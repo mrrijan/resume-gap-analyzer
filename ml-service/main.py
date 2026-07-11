@@ -4,7 +4,8 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 
 from schemas.resume import ParsedResume
 from schemas.posting import PostingInput, ParsedPosting
-from services import resume_parser, posting_parser
+from schemas.match import MatchInput, MatchResult
+from services import resume_parser, posting_parser, matcher
 
 app = FastAPI(title="ML Service")
 
@@ -28,3 +29,10 @@ async def parse_posting(payload: PostingInput):
     if not payload.text.strip():
         raise HTTPException(status_code=400, detail="Empty text")
     return posting_parser.parse(payload.text)
+
+@app.post("/match", response_model=MatchResult)
+async def match(payload: MatchInput):
+    try:
+        return matcher.match(payload)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
