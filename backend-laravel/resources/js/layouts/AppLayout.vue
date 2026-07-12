@@ -76,6 +76,7 @@ const router    = useRouter();
 
 const navItems = [
     { name: 'dashboard',    label: 'Dashboard',    icon: 'mdi-view-dashboard-outline', route: 'dashboard' },
+    { name: 'resumes',   label: 'Resumes',   icon: 'mdi-file-document-outline',  route: 'resumes' },
     // more items added as we build the features
 ];
 

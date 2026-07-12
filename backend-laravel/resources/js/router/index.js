@@ -32,7 +32,12 @@ const routes = [
         component: () => import('@/views/DashboardView.vue'),
         meta: { requiresAuth: true, layout: 'app' },
     },
-
+    {
+        path: '/resumes',
+        name: 'resumes',
+        component: () => import('@/views/ResumeView.vue'),
+        meta: { requiresAuth: true, layout: 'app' },
+    },
     // ---------- Fallback ----------
     {
         path: '/:pathMatch(.*)*',

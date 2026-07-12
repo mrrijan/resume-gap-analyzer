@@ -35,9 +35,12 @@ export const useAuthStore = defineStore('auth', () => {
         try {
             await authService.logout();
         } catch (e) {
-            // Even if the API call fails, clear local state — user intent is clear.
             console.warn('Logout API call failed; clearing local state anyway.', e);
         }
+        // Clear other stores so a new user doesn't see the previous one's data.
+        const { useResumeStore } = await import('@/stores/resume');
+        useResumeStore().reset();
+
         clearAuth();
     }
 
