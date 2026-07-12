@@ -38,6 +38,13 @@ const routes = [
         component: () => import('@/views/ResumeView.vue'),
         meta: { requiresAuth: true, layout: 'app' },
     },
+    {
+        path: '/postings',
+        name: 'postings',
+        component: () => import('@/views/PostingsView.vue'),
+        meta: { requiresAuth: true, layout: 'app' },
+    },
+
     // ---------- Fallback ----------
     {
         path: '/:pathMatch(.*)*',

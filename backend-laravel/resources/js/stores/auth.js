@@ -39,7 +39,9 @@ export const useAuthStore = defineStore('auth', () => {
         }
         // Clear other stores so a new user doesn't see the previous one's data.
         const { useResumeStore } = await import('@/stores/resume');
+        const { usePostingStore } = await import('@/stores/posting');
         useResumeStore().reset();
+        usePostingStore().reset();
 
         clearAuth();
     }
