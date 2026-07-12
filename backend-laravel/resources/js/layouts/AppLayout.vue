@@ -78,6 +78,7 @@ const navItems = [
     { name: 'dashboard',    label: 'Dashboard',    icon: 'mdi-view-dashboard-outline', route: 'dashboard' },
     { name: 'resumes',   label: 'Resumes',   icon: 'mdi-file-document-outline',  route: 'resumes' },
     { name: 'postings',  label: 'Postings',  icon: 'mdi-briefcase-outline',      route: 'postings' },
+    { name: 'matches',   label: 'Matches',   icon: 'mdi-scale-balance',          route: 'matches'  },
     // more items added as we build the features
 ];
 

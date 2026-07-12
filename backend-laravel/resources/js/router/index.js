@@ -45,6 +45,19 @@ const routes = [
         meta: { requiresAuth: true, layout: 'app' },
     },
 
+    {
+        path: '/matches',
+        name: 'matches',
+        component: () => import('@/views/MatchesView.vue'),
+        meta: { requiresAuth: true, layout: 'app' },
+    },
+    {
+        path: '/matches/:id',
+        name: 'match-detail',
+        component: () => import('@/views/MatchDetailView.vue'),
+        meta: { requiresAuth: true, layout: 'app' },
+    },
+
     // ---------- Fallback ----------
     {
         path: '/:pathMatch(.*)*',

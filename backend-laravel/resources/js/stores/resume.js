@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import { resumeService } from '@/services/resumeService';
+import { extractApiError } from '@/utils/errors';
 
 /**
  * Resume store — holds the user's uploaded resumes and orchestrates
@@ -26,7 +27,7 @@ export const useResumeStore = defineStore('resume', () => {
             // Backend returns them ordered by created_at desc; latest first.
             resumes.value = data.resumes;
         } catch (err) {
-            error.value = extractError(err, 'Failed to load resumes.');
+            error.value = extractApiError(err, 'Failed to load resumes.');
             throw err;
         } finally {
             loading.value = false;
@@ -42,7 +43,7 @@ export const useResumeStore = defineStore('resume', () => {
             resumes.value = [data.resume, ...resumes.value];
             return data.resume;
         } catch (err) {
-            error.value = extractError(err, 'Failed to upload resume.');
+            error.value = extractApiError(err, 'Failed to upload resume.');
             throw err;
         } finally {
             uploading.value = false;
@@ -55,7 +56,7 @@ export const useResumeStore = defineStore('resume', () => {
             await resumeService.destroy(id);
             resumes.value = resumes.value.filter((r) => r.id !== id);
         } catch (err) {
-            error.value = extractError(err, 'Failed to delete resume.');
+            error.value = extractApiError(err, 'Failed to delete resume.');
             throw err;
         }
     }
@@ -76,16 +77,3 @@ export const useResumeStore = defineStore('resume', () => {
         fetchAll, upload, destroy, reset,
     };
 });
-
-/**
- * Pull the best error message we can out of an axios error.
- * Prioritizes: validation errors > backend message > fallback.
- */
-function extractError(err, fallback) {
-    if (err.response?.status === 422) {
-        const errors = err.response.data.errors || {};
-        const firstField = Object.keys(errors)[0];
-        return firstField ? errors[firstField][0] : fallback;
-    }
-    return err.response?.data?.message || fallback;
-}

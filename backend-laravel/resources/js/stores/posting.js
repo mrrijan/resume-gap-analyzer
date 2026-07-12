@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import { postingService } from '@/services/postingService';
+import { extractApiError } from '@/utils/errors';
 
 export const usePostingStore = defineStore('posting', () => {
     // State
@@ -21,7 +22,7 @@ export const usePostingStore = defineStore('posting', () => {
             const { data } = await postingService.list();
             postings.value = data.postings;
         } catch (err) {
-            error.value = extractError(err, 'Failed to load postings.');
+            error.value = extractApiError(err, 'Failed to load postings.');
             throw err;
         } finally {
             loading.value = false;
@@ -36,7 +37,7 @@ export const usePostingStore = defineStore('posting', () => {
             postings.value = [data.posting, ...postings.value];
             return data.posting;
         } catch (err) {
-            error.value = extractError(err, 'Failed to add posting.');
+            error.value = extractApiError(err, 'Failed to add posting.');
             throw err;
         } finally {
             creating.value = false;
@@ -49,7 +50,7 @@ export const usePostingStore = defineStore('posting', () => {
             await postingService.destroy(id);
             postings.value = postings.value.filter((p) => p.id !== id);
         } catch (err) {
-            error.value = extractError(err, 'Failed to delete posting.');
+            error.value = extractApiError(err, 'Failed to delete posting.');
             throw err;
         }
     }
@@ -71,11 +72,3 @@ export const usePostingStore = defineStore('posting', () => {
     };
 });
 
-function extractError(err, fallback) {
-    if (err.response?.status === 422) {
-        const errors = err.response.data.errors || {};
-        const firstField = Object.keys(errors)[0];
-        return firstField ? errors[firstField][0] : fallback;
-    }
-    return err.response?.data?.message || fallback;
-}
