@@ -41,10 +41,12 @@ export const useAuthStore = defineStore('auth', () => {
         const { useResumeStore } = await import('@/stores/resume');
         const { usePostingStore } = await import('@/stores/posting');
         const { useMatchStore } = await import('@/stores/match');
+        const { useGapAnalysisStore } = await import('@/stores/gapAnalysis');
 
         useResumeStore().reset();
         usePostingStore().reset();
         useMatchStore().reset();
+        useGapAnalysisStore().reset();
 
         clearAuth();
     }

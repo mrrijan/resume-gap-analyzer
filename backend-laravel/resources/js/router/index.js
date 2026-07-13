@@ -58,6 +58,20 @@ const routes = [
         meta: { requiresAuth: true, layout: 'app' },
     },
 
+    {
+        path: '/gap-analysis',
+        name: 'gap-analysis',
+        component: () => import('@/views/GapAnalysisView.vue'),
+        meta: { requiresAuth: true, layout: 'app' },
+    },
+
+    {
+        path: '/gap-analysis/:id',
+        name: 'gap-analysis-detail',
+        component: () => import('@/views/GapAnalysisDetailView.vue'),
+        meta: { requiresAuth: true, layout: 'app' },
+    },
+
     // ---------- Fallback ----------
     {
         path: '/:pathMatch(.*)*',

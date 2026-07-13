@@ -79,6 +79,7 @@ const navItems = [
     { name: 'resumes',   label: 'Resumes',   icon: 'mdi-file-document-outline',  route: 'resumes' },
     { name: 'postings',  label: 'Postings',  icon: 'mdi-briefcase-outline',      route: 'postings' },
     { name: 'matches',   label: 'Matches',   icon: 'mdi-scale-balance',          route: 'matches'  },
+    { name: 'gap-analysis', label: 'Gap Analysis', icon: 'mdi-chart-bar-stacked',      route: 'gap-analysis' },
     // more items added as we build the features
 ];
 
