@@ -49,6 +49,10 @@ export const usePostingStore = defineStore('posting', () => {
         try {
             await postingService.destroy(id);
             postings.value = postings.value.filter((p) => p.id !== id);
+
+            const { useMatchStore } = await import('@/stores/match');
+            useMatchStore().dropForPosting(id);
+
         } catch (err) {
             error.value = extractApiError(err, 'Failed to delete posting.');
             throw err;

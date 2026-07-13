@@ -70,6 +70,29 @@ export const useMatchStore = defineStore('match', () => {
         }
     }
 
+    /**
+     * Drop matches referencing a deleted posting (called by posting store).
+     */
+    function dropForPosting(postingId) {
+        matches.value = matches.value.filter((m) => m.posting_id !== postingId);
+        if (currentMatch.value?.posting_id === postingId) currentMatch.value = null;
+    }
+
+    /**
+     * Drop matches referencing any version of a deleted resume (called by resume store).
+     * We only have resume_version_id on match records, not resume_id, but we know
+     * the resume's versions have been removed via cascade — so any match whose
+     * version_id doesn't correspond to a remaining resume is stale. Simpler: on
+     * resume delete, just refetch. Costs one round trip but always correct.
+     */
+    async function dropForResume(_resumeId) {
+        // Cheap and correct: refetch. Alternative (walk versions client-side) would
+        // require the match resource to include resume_id, which it currently doesn't.
+        try {
+            await fetchAll();
+        } catch { /* store.error already set */ }
+    }
+
     async function destroy(id) {
         error.value = null;
         try {
@@ -91,6 +114,8 @@ export const useMatchStore = defineStore('match', () => {
         error.value = null;
     }
 
+
+
     return {
         // state
         matches, currentMatch, loading, computing, loadingDetail, error,
@@ -98,6 +123,7 @@ export const useMatchStore = defineStore('match', () => {
         hasMatches,
         // actions
         fetchAll, fetchOne, compute, destroy, reset,
+        dropForPosting, dropForResume,
     };
 });
 

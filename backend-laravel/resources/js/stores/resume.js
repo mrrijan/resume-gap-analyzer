@@ -55,6 +55,10 @@ export const useResumeStore = defineStore('resume', () => {
         try {
             await resumeService.destroy(id);
             resumes.value = resumes.value.filter((r) => r.id !== id);
+
+            const { useMatchStore } = await import('@/stores/match');
+            useMatchStore().dropForResume(id);
+
         } catch (err) {
             error.value = extractApiError(err, 'Failed to delete resume.');
             throw err;

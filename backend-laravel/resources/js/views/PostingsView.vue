@@ -1,7 +1,7 @@
 <script setup>
 import { computed, nextTick, onMounted, ref } from 'vue';
 import { usePostingStore } from '@/stores/posting';
-
+import MatchCreateDialog from "@/components/match/MatchCreateDialog.vue";
 import PostingCreateDialog from '@/components/posting/PostingCreateDialog.vue';
 import PostingParsedDisplay from '@/components/posting/PostingParsedDisplay.vue';
 
@@ -11,6 +11,16 @@ const createDialogOpen = ref(false);
 const deleteDialog = ref(false);
 const postingToDelete = ref(null);
 const selectedPostingId = ref(null);
+import { useRouter } from 'vue-router';
+
+
+const router = useRouter();
+const matchDialogOpen = ref(false);
+
+function onMatchCreated(match) {
+    // Send them straight to the match detail page.
+    router.push({ name: 'match-detail', params: { id: match.id } });
+}
 
 const displayedPosting = computed(() => {
     if (selectedPostingId.value) {
@@ -148,8 +158,19 @@ function isSelected(posting) {
 
             <!-- Parsed sections of selected -->
             <div>
-                <div class="text-subtitle-2 text-medium-emphasis mb-3" data-parsed-anchor>
-                    {{ displayedPosting?.title || 'Latest posting' }} &middot; parsed sections
+                <div class="d-flex align-center justify-space-between mb-3" data-parsed-anchor>
+                    <div class="text-subtitle-2 text-medium-emphasis">
+                        {{ displayedPosting?.title || 'Latest posting' }} &middot; parsed sections
+                    </div>
+                    <v-btn
+                        color="primary"
+                        variant="tonal"
+                        size="small"
+                        prepend-icon="mdi-scale-balance"
+                        @click="matchDialogOpen = true"
+                    >
+                        Compute match
+                    </v-btn>
                 </div>
                 <PostingParsedDisplay :posting="displayedPosting" />
             </div>
@@ -180,6 +201,12 @@ function isSelected(posting) {
             </v-card>
         </v-dialog>
     </div>
+
+    <MatchCreateDialog
+        v-model="matchDialogOpen"
+        :preselected-posting-id="displayedPosting?.id"
+        @created="onMatchCreated"
+    />
 </template>
 
 <style scoped>
