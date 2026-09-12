@@ -31,7 +31,7 @@
 
             <template #append>
                 <v-divider/>
-                <div class="d-flex align-center">
+                <div class="d-flex align-center pa-3">
                     <div class="d-flex align-center cursor-pointer flex-grow-1 min-width-0"
                          @click="passwordDialogOpen = true">
                         <v-avatar color="primary" size="36" class="me-3">
