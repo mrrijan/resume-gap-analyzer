@@ -21,4 +21,8 @@ export const authService = {
     me() {
         return http.get('/me');
     },
+
+    changePassword(payload) {
+        return http.put('/change-password', payload);
+    },
 };

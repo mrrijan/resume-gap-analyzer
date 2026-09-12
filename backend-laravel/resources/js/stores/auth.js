@@ -9,11 +9,14 @@
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 import { authService } from '@/services/authService';
+import { extractApiError } from '@/utils/errors';
 
 export const useAuthStore = defineStore('auth', () => {
     // State
     const user  = ref(null);
     const token = ref(localStorage.getItem('auth_token'));
+    const changingPassword = ref(false);
+    const error = ref(null);
 
     // Getters
     const isAuthenticated = computed(() => Boolean(token.value));
@@ -68,6 +71,20 @@ export const useAuthStore = defineStore('auth', () => {
         }
     }
 
+    async function changePassword(payload) {
+        changingPassword.value = true;
+        error.value = null;
+        try {
+            const { data } = await authService.changePassword(payload);
+            return data;
+        } catch (err) {
+            error.value = extractApiError(err, 'Failed to change password.');
+            throw err;
+        } finally {
+            changingPassword.value = false;
+        }
+    }
+
     function setAuth(userObj, tokenStr) {
         user.value  = userObj;
         token.value = tokenStr;
@@ -82,10 +99,10 @@ export const useAuthStore = defineStore('auth', () => {
 
     return {
         // state
-        user, token,
+        user, token, changingPassword, error,
         // getters
         isAuthenticated,
         // actions
-        register, login, logout, fetchCurrentUser, clearAuth,
+        register, login, logout, fetchCurrentUser, clearAuth, changePassword
     };
 });

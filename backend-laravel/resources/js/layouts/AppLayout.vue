@@ -8,10 +8,10 @@
         >
             <div class="d-flex align-center px-4 py-4">
                 <v-icon color="primary" size="28" class="me-2">mdi-check-decagram</v-icon>
-                <span class="text-h6 font-weight-bold">Alignr</span>
+                <span class="text-h6 font-weight-bold">SkillBridge</span>
             </div>
 
-            <v-divider />
+            <v-divider/>
 
             <v-list nav density="comfortable" class="px-2 py-2">
                 <v-list-subheader class="text-uppercase text-caption">
@@ -30,13 +30,14 @@
             </v-list>
 
             <template #append>
-                <v-divider />
-                <div class="pa-3">
-                    <div class="d-flex align-center">
+                <v-divider/>
+                <div class="d-flex align-center">
+                    <div class="d-flex align-center cursor-pointer flex-grow-1 min-width-0"
+                         @click="passwordDialogOpen = true">
                         <v-avatar color="primary" size="36" class="me-3">
-              <span class="text-white text-body-2 font-weight-medium">
-                {{ userInitials }}
-              </span>
+                          <span class="text-white text-body-2 font-weight-medium">
+                             {{ userInitials }}
+                          </span>
                         </v-avatar>
                         <div class="flex-grow-1 min-width-0">
                             <div class="text-body-2 font-weight-medium text-truncate">
@@ -46,40 +47,44 @@
                                 {{ authStore.user?.email || '' }}
                             </div>
                         </div>
-                        <v-btn
-                            icon="mdi-logout"
-                            variant="text"
-                            size="small"
-                            @click="handleLogout"
-                        />
                     </div>
+                    <v-btn
+                        icon="mdi-logout"
+                        variant="text"
+                        size="small"
+                        @click="handleLogout"
+                    />
                 </div>
+
+                <ChangePasswordDialog v-model="passwordDialogOpen"/>
             </template>
         </v-navigation-drawer>
 
         <!-- Main content -->
         <v-main>
             <v-container fluid class="py-6 px-8">
-                <slot />
+                <slot/>
             </v-container>
         </v-main>
     </v-app>
 </template>
 
 <script setup>
-import { computed } from 'vue';
-import { useRouter } from 'vue-router';
-import { useAuthStore } from '@/stores/auth';
+import {computed, ref} from 'vue';
+import {useRouter} from 'vue-router';
+import {useAuthStore} from '@/stores/auth';
+import ChangePasswordDialog from '@/components/auth/ChangePasswordDialog.vue';
 
 const authStore = useAuthStore();
-const router    = useRouter();
+const router = useRouter();
+const passwordDialogOpen = ref(false);
 
 const navItems = [
-    { name: 'dashboard',    label: 'Dashboard',    icon: 'mdi-view-dashboard-outline', route: 'dashboard' },
-    { name: 'resumes',   label: 'Resumes',   icon: 'mdi-file-document-outline',  route: 'resumes' },
-    { name: 'postings',  label: 'Postings',  icon: 'mdi-briefcase-outline',      route: 'postings' },
-    { name: 'matches',   label: 'Matches',   icon: 'mdi-scale-balance',          route: 'matches'  },
-    { name: 'gap-analysis', label: 'Gap Analysis', icon: 'mdi-chart-bar-stacked',      route: 'gap-analysis' },
+    {name: 'dashboard', label: 'Dashboard', icon: 'mdi-view-dashboard-outline', route: 'dashboard'},
+    {name: 'resumes', label: 'Resumes', icon: 'mdi-file-document-outline', route: 'resumes'},
+    {name: 'postings', label: 'Postings', icon: 'mdi-briefcase-outline', route: 'postings'},
+    {name: 'matches', label: 'Matches', icon: 'mdi-scale-balance', route: 'matches'},
+    {name: 'gap-analysis', label: 'Gap Analysis', icon: 'mdi-chart-bar-stacked', route: 'gap-analysis'},
     // more items added as we build the features
 ];
 
@@ -94,6 +99,12 @@ const userInitials = computed(() => {
 
 async function handleLogout() {
     await authStore.logout();
-    router.push({ name: 'login' });
+    router.push({name: 'login'});
 }
 </script>
+
+<style scoped>
+.cursor-pointer {
+    cursor: pointer;
+}
+</style>

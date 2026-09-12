@@ -20,4 +20,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('postings', PostingController::class);
     Route::apiResource('matches', MatchController::class);
     Route::apiResource('gap-analyses', GapAnalysisController::class);
+    Route::put('/change-password', [AuthController::class, 'changePassword']);
 });

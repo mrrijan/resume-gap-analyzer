@@ -113,11 +113,11 @@ async function submit() {
           </span>
                 </div>
 
-                <v-text-field
-                    v-model="form.source_url"
-                    label="Source URL (optional)"
-                    placeholder="https://..."
-                />
+<!--                <v-text-field-->
+<!--                    v-model="form.source_url"-->
+<!--                    label="Source URL (optional)"-->
+<!--                    placeholder="https://..."-->
+<!--                />-->
             </v-card-text>
 
             <v-divider />
